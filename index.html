@@ -4,20 +4,60 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Role Game</title>
+  <title>Adventure Game</title>
+  <link rel="stylesheet" href="./css/main.css?ver=0.1.1">
   <script src="./js/main.js?ver=0.1.1" defer></script>
 </head>
 <body>
 
   <main>
     <header>
-      <h1>Game</h1>
+      <h1>Adventure Game</h1>
+
+      <a href="#" class="reset-game">Reset</a>
     </header>
 
-    <footer>
+    <div id="loading-game"></div>
+
+    <section id="game" class="d-flex" hidden>
+      <div class="card profile">
+        <div class="profile-welcome">
+          <span class="mr-0-5">Welcome,</span> <strong id="player-name"></strong>! <small id="player-name-edit" class="cursor ml-0-5" title="Edit player name">✏️</small>
+        </div>
+
+        <form id="player-name-form" class="mt-1" hidden>
+          <input type="text" id="player-name-input" class="form-control mb-0-5" placeholder="Type your name..." required>
+          <button class="btn btn-primary btn-full" type="submit">Save name</button>
+        </form>
+
+        <div class="health mt-1 w-100">
+         <h3>
+          Health <span id="player-health-current"></span> / <span id="player-health-total"></span>
+         </h3>
+          <div class="progress mt-0-5">
+            <div class="progress-bar" style="width: 50%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fight">
+        <h3>Farm area</h3>
+
+        <button class="btn btn-primary btn-full" id="fight-search">Look for monsters</button>
+      </div>
+    </section>
+
+    <dialog></dialog>
+
+    <footer class="mt-1">
       <p>with ❤️ from <a href="https://ricard.dev" title="Ricard Torres Code" target="_blank">Ricard Torres</a></p>
       <p><a href="https://github.com/quicoto/rol-game" target="_blank">v0.1.1</a></p>
     </footer>
   </main>
+
+  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+  <script>
+    twemoji.parse(document.body);
+  </script>
 </body>
 </html>
