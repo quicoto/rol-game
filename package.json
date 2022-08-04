@@ -1,9 +1,10 @@
 {
   "name": "rol-game",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "scripts": {
-    "build": "npm run build:js",
+    "build": "npm run build:html && npm run build:js",
+    "build:html": "node html.js",
     "build:js": "esbuild src/js/main.js --bundle --minify --outfile=dist/js/main.js",
     "watch:js": "esbuild src/js/main.js --bundle --outfile=dist/js/main.js --watch",
     "test": "test",
