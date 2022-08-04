@@ -1,0 +1,78 @@
+.cursor {
+  cursor: pointer;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.mt-0-5 {
+  margin-top: .5rem;
+}
+
+.mr-0-5 {
+  margin-right: .5rem;
+}
+
+.mb-0-5 {
+  margin-bottom: .5rem;
+}
+
+.ml-0-5 {
+  margin-left: .5rem;
+}
+
+.pt-0-5 {
+  padding-top: .5rem;
+}
+
+.pr-0-5 {
+  padding-right: .5rem;
+}
+
+.pb-0-5 {
+  padding-bottom: .5rem;
+}
+
+.pl-0-5 {
+  padding-left: .5rem;
+}
+
+@for $i from 1 through 10 {
+  .mt-#{$i} {
+    margin-top: #{$i}rem;
+  }
+
+  .mr-#{$i} {
+    margin-right: #{$i}rem;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: #{$i}rem;
+  }
+
+  .ml-#{$i} {
+    margin-left: #{$i}rem;
+  }
+
+  .pt-#{$i} {
+    padding-top: #{$i}rem;
+  }
+
+  .pr-#{$i} {
+    padding-right: #{$i}rem;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: #{$i}rem;
+  }
+
+  .pl-#{$i} {
+    padding-left: #{$i}rem;
+  }
+}
+

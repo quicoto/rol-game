@@ -1,0 +1,14 @@
+.loader {
+  margin: 1rem;
+  text-align: center;
+
+  svg {
+    width: 100px;
+    height: 100px;
+
+    path,
+    rect{
+      fill: $primary;
+    }
+  }
+}

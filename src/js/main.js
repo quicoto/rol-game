@@ -1,16 +1,50 @@
-import * as state from './state';
+import { spinner  } from './spinner';
+import * as Profile from './profile';
+import * as Fight from './fight';
+import * as Health from './health';
+import * as State from './state';
 
 function _init() {
   const _ = {
-    state: state.init(),
+    state: State.init(),
   };
+  const _$ = {};
 
-  _.state.enemy = { health: 50 };
+  function _initModules() {
+    Profile.init();
+    Health.init();
+    Fight.init();
+  }
 
-  state.save();
+  function _resetGame(event) {
+    event.preventDefault();
+    State.reset();
+    window.location.reload(true);
+  }
 
-  // eslint-disable-next-line no-console
-  console.log(state.get());
+  function _setElements() {
+    _$.game = document.getElementById('game');
+    _$.loadingGame = document.getElementById('loading-game');
+    _$.resetGame = document.querySelectorAll('.reset-game');
+  }
+
+  function _addEventListeners() {
+    _$.resetGame.forEach(($resetGame) => {
+      $resetGame.addEventListener('click', _resetGame);
+    });
+  }
+
+  _setElements();
+
+  _$.loadingGame.innerHTML = spinner;
+
+  _addEventListeners();
+  _initModules();
+
+  setTimeout(() => {
+    _$.loadingGame.setAttribute('hidden', true);
+    _$.game.removeAttribute('hidden');
+  }, 1500);
 }
 
 _init();

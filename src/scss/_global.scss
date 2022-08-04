@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+[hidden] {
+  display: none !important;
+}

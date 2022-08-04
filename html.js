@@ -18,7 +18,7 @@ function readFile(path) {
 }
 
 function _init() {
-  const template = readFile('src/index.html');
+  const template = readFile('src/template.html');
 
   createFile('./dist/index.html', template);
 }

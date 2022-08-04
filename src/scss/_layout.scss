@@ -1,0 +1,27 @@
+html {
+  font-size: 22px;
+}
+
+body {
+  background-image: var(--background);
+  background-size: cover;
+  font-size: 1rem;
+  margin: 0.5rem;
+  padding: 0;
+
+  @media (min-width: $breakpoint-md) {
+    margin: 1rem;
+  }
+}
+
+main {
+  background-color: $bg-color;
+  border-radius: 5px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+section {
+  gap: 1rem;
+}

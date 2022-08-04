@@ -1,0 +1,9 @@
+.profile {
+  flex-wrap: wrap;
+  max-width: 300px;
+
+  &-welcome {
+    align-items: center;
+    display: flex;
+  }
+}

@@ -1,0 +1,25 @@
+$breakpoint-md: 768px;
+
+$border-radius: .375rem;
+
+// Colors
+$body-color: #212529;
+$secondary-bg: #f5f5f5;
+$bg-color: white;
+$primary: #E74C3C;
+$primary-inverted: white;
+$border-color: #ced4da;
+$progress-bg: $border-color;
+
+
+
+// Buttons
+$button-color: $body-color;
+
+:root {
+  --background: url("../assets/woods.jpg");
+
+  --progress-good: #2ECC71;
+  --progress-warning: #F1C40F;
+  --progress-danger: #E74C3C;
+}

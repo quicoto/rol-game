@@ -1,0 +1,7 @@
+.card {
+  border-radius: $border-radius;
+  border: solid 1px $border-color;
+  display: flex;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
