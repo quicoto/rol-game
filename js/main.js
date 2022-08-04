@@ -1,0 +1,1 @@
+(()=>{var e="gamestate",i={player:{health:100}},t={};function a(){return t=JSON.parse(window.localStorage.getItem(e))||i,t}function n(){window.localStorage.setItem(e,JSON.stringify(t))}function o(){return t}function c(){let s={state:a()};s.state.enemy={health:50},n(),console.log(o())}c();})();
