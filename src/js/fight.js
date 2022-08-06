@@ -30,6 +30,8 @@ function _fight() {
     _.state.player.health.current -= _.currentEnemy.attack,
   );
 
+  _.state.player.experience += _.currentEnemy.experience;
+
   State.save();
 
   if (_.state.player.health.current === 0) {

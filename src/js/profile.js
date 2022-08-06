@@ -1,6 +1,6 @@
 import * as State from './state';
 import * as Health from './health';
-import * as Experience from './fight.experience';
+import * as Experience from './experience';
 
 const _$ = {};
 
@@ -41,6 +41,7 @@ function _addEventListeners() {
 
 export function refresh() {
   Health.update();
+  Experience.update();
   _$.level.textContent = Experience.getLevel().name;
   _$.attack.textContent = State.get().player.attack;
   _$.defense.textContent = State.get().player.defense;

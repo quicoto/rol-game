@@ -27,6 +27,22 @@ export const levels = [
   },
 ];
 
+const _$ = {};
+
+function _setElements() {
+  _$.progressBar = document.querySelector('.experience .progress-bar');
+}
+
+_setElements();
+
+export function update() {
+  _$.progressBar.style.width = `${State.get().player.experience}%`;
+}
+
+export function init() {
+  update();
+}
+
 export function getLevel() {
   const playerExperience = State.get().player.experience;
 
