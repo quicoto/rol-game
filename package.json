@@ -1,6 +1,6 @@
 {
   "name": "role-game",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "",
   "scripts": {
     "build": "npm run build:css && npm run build:html && npm run build:js",
@@ -10,7 +10,7 @@
     "watch:css": "sass src/scss/main.scss dist/css/main.css --watch",
     "watch:js": "esbuild src/js/main.js --bundle --outfile=dist/js/main.js --watch",
     "test": "test",
-    "lint": "eslint"
+    "lint": "eslint 'src/js/**/*.js'"
   },
   "keywords": [
     "game"

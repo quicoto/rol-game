@@ -1,16 +1,15 @@
-import { spinner  } from './spinner';
+import { spinner } from './spinner';
 import * as Profile from './profile';
 import * as Fight from './fight';
 import * as Health from './health';
 import * as State from './state';
+import { emojiConfiguration } from './emoji';
 
 function _init() {
-  const _ = {
-    state: State.init(),
-  };
   const _$ = {};
 
   function _initModules() {
+    State.init();
     Profile.init();
     Health.init();
     Fight.init();
@@ -48,3 +47,5 @@ function _init() {
 }
 
 _init();
+
+twemoji.parse(document.body, emojiConfiguration);

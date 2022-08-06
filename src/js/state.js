@@ -1,11 +1,14 @@
 const stateName = 'gamestate';
 const initialState = {
   player: {
-    name: "Adventurer",
+    name: 'John Snow',
+    experience: 0,
     health: {
       current: 100,
       total: 100,
     },
+    attack: 10,
+    defense: 0,
   },
 };
 let state = {};

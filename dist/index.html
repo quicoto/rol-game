@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adventure Game</title>
   <link rel="stylesheet" href="./css/main.css?ver=0.1.1">
+  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
   <script src="./js/main.js?ver=0.1.1" defer></script>
 </head>
 <body>
@@ -13,51 +14,86 @@
   <main>
     <header>
       <h1 class="d-flex align-items-center">🎮 <span class="ml-0-5">Adventure Game</span></h1>
-
       <a href="#" class="reset-game">Reset</a>
     </header>
 
     <div id="loading-game"></div>
 
     <section id="game" class="d-flex" hidden>
-      <div class="card profile">
-        <div class="profile-welcome">
-          <span class="mr-0-5 d-flex align-items-center">👋 <span class="ml-0-5">Welcome,</span></span> <strong id="player-name"></strong>! <small id="player-name-edit" class="cursor ml-0-5" title="Edit player name">✏️</small>
+      <div class="d-flex w-100">
+        <span class="d-flex align-items-center mr-0-5">
+          👋 <span class="ml-0-5">
+              Welcome <em id="player-level"></em>
+            </span>
+        </span>
+        <div class="d-flex">
+          <strong id="player-name"></strong>! <small id="player-name-edit" class="cursor ml-0-5" title="Edit player name">✏️</small>
         </div>
 
         <form id="player-name-form" class="mt-1" hidden>
           <input type="text" id="player-name-input" class="form-control mb-0-5" placeholder="Type your name..." required>
           <button class="btn btn-primary btn-full" type="submit">Save name</button>
         </form>
-
+      </div>
+      <div class="card profile">
+        <h3 class="d-flex align-items-center">
+          🧙 <span class="ml-0-5">Profile</span>
+        </h3>
         <div class="health mt-1 w-100">
-         <h3>
-          Health <span id="player-health-current"></span> / <span id="player-health-total"></span>
-         </h3>
+          <p class="d-flex align-items-center">
+            ❤️ <span class="ml-0-5">
+                Health
+                <small>
+                  <span id="player-health-current"></span> / <span id="player-health-total"></span>
+                </small>
+              </span>
+          </p>
           <div class="progress mt-0-5">
-            <div class="progress-bar" style="width: 50%"></div>
+            <div class="progress-bar"></div>
           </div>
+        </div>
+        <div class="experience mt-1 w-100">
+          <p class="d-flex align-items-center">
+            ⚡ <span class="ml-0-5">Experience</span>
+          </p>
+          <div class="progress mt-0-5">
+            <div class="progress-bar"></div>
+          </div>
+        </div>
+
+        <div class="attack mt-1 w-100">
+          <p class="d-flex align-items-center">
+            🗡️ <span class="ml-0-5">Attack</span>
+          </p>
+          <span id="player-attack"></span>
+        </div>
+
+        <div class="defense mt-1 w-100">
+          <p class="d-flex align-items-center">
+            🛡️ <span class="ml-0-5">Defense</span>
+          </p>
+          <span id="player-defense"></span>
         </div>
       </div>
 
       <div class="card fight">
-        <h3>🧌 Fight</h3>
-
+        <h3 class="d-flex align-items-center">
+          ⚔️ <span class="ml-0-5">Fight</span>
+        </h3>
         <button class="btn btn-primary btn-full mt-1" id="fight-search">Look for monsters</button>
       </div>
     </section>
 
-    <dialog></dialog>
+    <dialog hidden role="alertdialog"></dialog>
 
     <footer class="mt-1">
-      <p>with ❤️ from <a href="https://ricard.dev" title="Ricard Torres Code" target="_blank">Ricard Torres</a></p>
-      <p><a href="https://github.com/quicoto/rol-game" target="_blank">v0.1.1</a></p>
+      <p><a href="https://ricard.dev" title="Ricard Torres Code" target="_blank">Ricard Torres</a></p>
+      <p>
+        <small>
+          <a href="https://github.com/quicoto/rol-game" target="_blank">v0.1.1</a>
+        </small>
+      </p>
     </footer>
   </main>
-
-  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
-  <script>
-    twemoji.parse(document.body);
-  </script>
 </body>
 </html>

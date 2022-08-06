@@ -48,4 +48,13 @@
       background-color: darken($primary, 10%);
     }
   }
+
+  &-secondary {
+    background-color: $body-color;
+    color: $primary-inverted;
+
+    &:hover {
+      background-color: darken($body-color, 10%);
+    }
+  }
 }

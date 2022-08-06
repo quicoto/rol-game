@@ -24,4 +24,18 @@ main {
 
 section {
   gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.game-over {
+  text-align: center;
+
+  h2,
+  h3 {
+    justify-content: center;
+  }
+
+  &-stone .emoji{
+    width: 150px;
+  }
 }

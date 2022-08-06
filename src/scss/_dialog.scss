@@ -1,3 +1,30 @@
-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.7);
+dialog {
+  top: 10%;
+  z-index: 2;
 }
+
+body.dialog-open {
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    background: rgba(0, 0, 0, 0.5);
+    content: '';
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.dialog {
+  &-buttons {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+  }
+}
+

@@ -11,18 +11,17 @@ function _setElements() {
 _setElements();
 
 export function update() {
-  let color = "danger";
+  let color = 'danger';
 
   _$.healthCurrent.textContent = State.get().player.health.current;
   _$.healthTotal.textContent = State.get().player.health.total;
 
   _$.progressBar.style.width = `${State.get().player.health.current}%`;
 
-  if (State.get().player.health.current >= 25) { color = "warning"; }
-  if (State.get().player.health.current >= 75) { color = "good"; }
+  if (State.get().player.health.current >= 25) { color = 'warning'; }
+  if (State.get().player.health.current >= 75) { color = 'good'; }
 
   _$.progressBar.style.backgroundColor = `var(--progress-${color})`;
-
 }
 
 export function init() {

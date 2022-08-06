@@ -2,6 +2,12 @@
   border-radius: $border-radius;
   border: solid 1px $border-color;
   display: flex;
-  padding: 1rem;
   flex-wrap: wrap;
+  padding: 1rem;
+
+  h3 {
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 0.5rem;
+    width: 100%;
+  }
 }
