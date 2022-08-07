@@ -3,7 +3,7 @@ import * as Dialog from './dialog';
 import * as templates from './fight.templates';
 import * as Profile from './profile';
 import monsters from './data/monsters';
-import { randomizeArray } from './utils';
+import { randomizeArray, getRandomInt } from './utils';
 import { emojiConfiguration } from './emoji';
 
 const _$ = {};
@@ -25,9 +25,14 @@ function _findFight() {
 }
 
 function _fight() {
+  const randomAttack = getRandomInt(_.currentEnemy.attack);
+
+  // eslint-disable-next-line no-console
+  console.log(`Enemy attack: ${_.currentEnemy.attack}, Random: ${randomAttack}`);
+
   _.state.player.health.current = Math.max(
     0,
-    _.state.player.health.current -= _.currentEnemy.attack,
+    _.state.player.health.current -= randomAttack,
   );
 
   _.state.player.experience += _.currentEnemy.experience;
@@ -42,15 +47,34 @@ function _fight() {
   }
 
   // eslint-disable-next-line no-console
-  console.log(`${_.currentEnemy.name} attacked you for ${_.currentEnemy.attack} damage.`);
+  console.log(`${_.currentEnemy.name} attacked you for ${randomAttack} (max: ${_.currentEnemy.attack}) damage.`);
   // eslint-disable-next-line no-console
   console.log(`You have ${_.state.player.health.current} health remaining.`);
-
-  Profile.refresh();
 }
 
 function _escape() {
+  const randomAttack = getRandomInt(_.currentEnemy.attack / 2);
 
+  // eslint-disable-next-line no-console
+  console.log(`Enemy attack: ${_.currentEnemy.attack}, Random: ${randomAttack}`);
+
+  _.state.player.health.current = Math.max(
+    0,
+    _.state.player.health.current -= randomAttack,
+  );
+
+  State.save();
+
+  if (_.state.player.health.current === 0) {
+    _dead();
+
+    return;
+  }
+
+  // eslint-disable-next-line no-console
+  console.log(`${_.currentEnemy.name} attacked you for ${randomAttack} (max: ${_.currentEnemy.attack}) damage.`);
+  // eslint-disable-next-line no-console
+  console.log(`You have ${_.state.player.health.current} health remaining.`);
 }
 
 function _handleDialogClick(event) {
@@ -69,6 +93,7 @@ function _handleDialogClick(event) {
         break;
     }
 
+    Profile.refresh();
     Dialog.close();
   }
 }

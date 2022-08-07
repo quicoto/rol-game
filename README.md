@@ -5,10 +5,13 @@ Browser role game. No database, just LocalStorage
 ## To Do
 
 - [ ] Fight
-  - [ ] Escape calculated
-  - [ ] Fight correctly randomly calculated
+  - [x] Escape calculated
+  - [x] Fight correctly randomly calculated
     - [ ] Apply attack factor
     - [ ] Apply defense factor
+  - [ ] Monster health considered
+- [ ] Experince
+  - [ ] Show level number.
 - [ ] Fight level dropdown (Forest, Cave, Dungeon, Underworld)
 - [ ] Blacksmith
   - [ ] Buy shields
