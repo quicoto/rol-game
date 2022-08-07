@@ -1,6 +1,6 @@
 {
   "name": "role-game",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "",
   "scripts": {
     "build": "npm run build:css && npm run build:html && npm run build:js",

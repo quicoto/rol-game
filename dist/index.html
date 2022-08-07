@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adventure Game</title>
-  <link rel="stylesheet" href="./css/main.css?ver=0.2.0">
+  <link rel="stylesheet" href="./css/main.css?ver=0.3.1">
   <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
-  <script src="./js/main.js?ver=0.2.0" defer></script>
+  <script src="./js/main.js?ver=0.3.1" defer></script>
 </head>
 <body>
 
@@ -20,7 +20,7 @@
     <div id="loading-game"></div>
 
     <section id="game" class="d-flex" hidden>
-      <div class="d-flex w-100">
+      <div class="d-flex w-100 flex-wrap">
         <span class="d-flex align-items-center mr-0-5">
           👋 <span class="ml-0-5">
               Welcome <em id="player-level"></em>
@@ -30,7 +30,7 @@
           <strong id="player-name"></strong>! <small id="player-name-edit" class="cursor ml-0-5" title="Edit player name">✏️</small>
         </div>
 
-        <form id="player-name-form" class="mt-1" hidden>
+        <form id="player-name-form" class="mt-1 w-100" hidden>
           <input type="text" id="player-name-input" class="form-control mb-0-5" placeholder="Type your name..." required>
           <button class="btn btn-primary btn-full" type="submit">Save name</button>
         </form>
@@ -41,7 +41,7 @@
         </h3>
         <div class="attack mt-1 w-100">
           <div class="d-flex align-items-center">
-            🪙 <span class="ml-0-5 mr-0-5">Gold:</span><span id="player-gold"></span>
+            🪙 <span class="ml-0-5 mr-0-5">Gold:</span><small id="player-gold"></small>
           </div>
         </div>
         <div class="health mt-1 w-100">
@@ -68,13 +68,13 @@
 
         <div class="attack mt-1 w-100">
           <div class="d-flex align-items-center">
-            🗡️ <span class="ml-0-5 mr-0-5">Attack:</span> <span id="player-attack"></span>
+            🗡️ <span class="ml-0-5 mr-0-5">Attack:</span> <small id="player-attack"></small>
           </div>
         </div>
 
         <div class="defense mt-1 w-100">
           <div class="d-flex align-items-center">
-            🛡️ <span class="ml-0-5 mr-0-5">Defense:</span> <span id="player-defense"></span>
+            🛡️ <span class="ml-0-5 mr-0-5">Defense:</span> <small id="player-defense"></small>
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@
       <p><a href="https://ricard.dev" title="Ricard Torres Code" target="_blank">Ricard Torres</a></p>
       <p>
         <small>
-          <a href="https://github.com/quicoto/rol-game" target="_blank">v0.2.0</a>
+          <a href="https://github.com/quicoto/rol-game" target="_blank">v0.3.1</a>
         </small>
       </p>
     </footer>
