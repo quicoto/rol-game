@@ -1,6 +1,7 @@
 import * as State from './state';
 import * as Health from './health';
 import * as Experience from './experience';
+import { formatNumber } from './utils';
 
 const _$ = {};
 
@@ -32,6 +33,7 @@ function _setElements() {
   _$.level = document.getElementById('player-level');
   _$.attack = document.getElementById('player-attack');
   _$.defense = document.getElementById('player-defense');
+  _$.gold = document.getElementById('player-gold');
 }
 
 function _addEventListeners() {
@@ -42,14 +44,16 @@ function _addEventListeners() {
 export function refresh() {
   Health.update();
   Experience.update();
-  _$.level.textContent = Experience.getLevel().name;
-  _$.attack.textContent = State.get().player.attack;
-  _$.defense.textContent = State.get().player.defense;
+  _$.level.textContent = Experience.getLevel(State.get().player.experience).name;
+  _$.attack.textContent = formatNumber(State.get().player.attack);
+  _$.defense.textContent = formatNumber(State.get().player.defense);
+  _$.gold.textContent = formatNumber(State.get().player.gold);
 }
 
 export function init() {
   _setElements();
   _addEventListeners();
+  Experience.init();
 
   if (State.get().player.name) {
     _$.name.textContent = State.get().player.name;

@@ -9,6 +9,7 @@ const initialState = {
     },
     attack: 10,
     defense: 0,
+    gold: 0,
   },
 };
 let state = {};

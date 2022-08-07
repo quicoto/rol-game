@@ -6,6 +6,7 @@ export default [
     attack: 30,
     defense: 30,
     experience: 10,
+    gold: 10,
   },
   {
     name: 'Goblin',
@@ -14,6 +15,7 @@ export default [
     attack: 15,
     defense: 10,
     experience: 5,
+    gold: 5,
   },
   {
     name: 'Boar',
@@ -22,5 +24,6 @@ export default [
     attack: 5,
     defense: 0,
     experience: 1,
+    gold: 1,
   },
 ];

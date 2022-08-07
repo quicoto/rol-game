@@ -31,6 +31,7 @@ function _fight() {
   );
 
   _.state.player.experience += _.currentEnemy.experience;
+  _.state.player.gold += _.currentEnemy.gold;
 
   State.save();
 
